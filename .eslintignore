@@ -1,0 +1,8 @@
+build
+dist
+.eslintrc.js
+.gitignore
+webpack.config.js
+vitest.config.ts
+src/**/**.test.ts
+__mocks__

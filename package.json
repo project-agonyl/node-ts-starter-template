@@ -1,0 +1,42 @@
+{
+  "name": "ts-starter-template",
+  "version": "1.0.0",
+  "description": "A NodeJS starter template with pre-configured Typescript, Eslint, Husky and NCC build to single file for your projects",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "clean": "npx rimraf dist && npx rimraf build",
+    "lint": "npx eslint ./src",
+    "lint:fix": "npx eslint ./src --fix",
+    "build": "npm run clean && npx tsc && npx ncc build ./build/service.js -o dist -m",
+    "dev": "npx nodemon ./src/service.ts",
+    "test": "vitest run --coverage",
+    "prepare": "husky install"
+  },
+  "keywords": ["nodejs", "typescript", "eslint", "husky", "ncc", "starter-template"],
+  "author": "cyberinferno",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "@vercel/ncc": "^0.36.1",
+    "@vitest/coverage-istanbul": "^0.33.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.0",
+    "nodemon": "^3.0.1",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
